@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Bus Management Logo">
+            <h1>Bus Management System</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
+                <li><a href="#" onclick="showSection('tracking')">Bus Tracking</a></li>
+                <li><a href="#" onclick="showSection('route-management')">Route Management</a></li>
+                <li><a href="#" onclick="showSection('schedules')">Schedules</a></li>
+                <li><a href="#" onclick="showSection('ticket-booking')">Ticket Booking</a></li>
+                <li><a href="#" onclick="showSection('check-in')">Passenger Check-In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="active">
+            <h2>Dashboard</h2>
+            <div class="dashboard-cards">
+                <div class="card" onclick="showSection('tracking')">
+                    <img src="images/bus.png" alt="Bus Tracking">
+                    <h3>Bus Tracking</h3>
+                    <p>Track buses in real-time.</p>
+                </div>
+                <div class="card" onclick="showSection('route-management')">
+                    <img src="images/route.png" alt="Route Management">
+                    <h3>Route Management</h3>
+                    <p>Manage bus routes and schedules.</p>
+                </div>
+                <div class="card" onclick="showSection('schedules')">
+                    <img src="images/schedule.png" alt="Schedules">
+                    <h3>Schedules</h3>
+                    <p>View arrival and departure times.</p>
+                </div>
+                <div class="card" onclick="showSection('ticket-booking')">
+                    <img src="images/booking.png" alt="Ticket Booking">
+                    <h3>Ticket Booking</h3>
+                    <p>Book tickets for bus routes.</p>
+                </div>
+                <div class="card" onclick="showSection('check-in')">
+                    <img src="images/checkin.png" alt="Passenger Check-In">
+                    <h3>Passenger Check-In</h3>
+                    <p>Manage passenger check-ins.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bus Tracking Section -->
+        <section id="tracking">
+            <h2>Bus Tracking</h2>
+            <div id="map"></div>
+        </section>
+
+        <!-- Route Management Section -->
+        <section id="route-management">
+            <h2>Route Management</h2>
+            <div>
+                <label for="start-location">Start Location:</label>
+                <input type="text" id="start-location">
+            </div>
+            <div>
+                <label for="end-location">End Location:</label>
+                <input type="text" id="end-location">
+            </div>
+            <div>
+                <button onclick="optimizeRoute()">Optimize Route</button>
+            </div>
+        </section>
+
+        <!-- Schedules Section -->
+        <section id="schedules">
+            <h2>Bus Schedules</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Route</th>
+                        <th>Arrival Time</th>
+                        <th>Departure Time</th>
+                    </tr>
+                </thead>
+                <tbody id="schedule-table">
+                    <!-- Dynamic content will be inserted here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Ticket Booking Section -->
+        <section id="ticket-booking">
+            <h2>Ticket Booking</h2>
+            <div>
+                <label for="route-select">Select Route:</label>
+                <select id="route-select"></select>
+            </div>
+            <div>
+                <label for="passenger-name">Passenger Name:</label>
+                <input type="text" id="passenger-name">
+            </div>
+            <div>
+                <button onclick="bookTicket()">Book Ticket</button>
+            </div>
+            <div id="booking-info"></div>
+        </section>
+
+        <!-- Passenger Check-In Section -->
+        <section id="check-in">
+            <h2>Passenger Check-In</h2>
+            <div>
+                <label for="ticket-number">Ticket Number:</label>
+                <input type="text" id="ticket-number">
+            </div>
+            <div>
+                <button onclick="checkInPassenger()">Check-In</button>
+            </div>
+            <div id="check-in-info"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Bus Management System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
