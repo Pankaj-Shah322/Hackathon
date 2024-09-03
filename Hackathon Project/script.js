@@ -21,6 +21,7 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.add('active');
 }
 
+
 // Function to optimize route
 function optimizeRoute() {
     const startLocation = document.getElementById('start-location').value;
