@@ -17,12 +17,18 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
-                <li><a href="#" onclick="showSection('tracking')">Bus Tracking</a></li>
-                <li><a href="#" onclick="showSection('route-management')">Route Management</a></li>
-                <li><a href="#" onclick="showSection('schedules')">Schedules</a></li>
-                <li><a href="#" onclick="showSection('ticket-booking')">Ticket Booking</a></li>
-                <li><a href="#" onclick="showSection('check-in')">Passenger Check-In</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Dashboard</a>
+                        <a href="#" onclick="showSection('tracking')">Bus Tracking</a>
+                        <a href="#" onclick="showSection('route-management')">Route Management</a>
+                        <a href="#" onclick="showSection('schedules')">Schedules</a>
+                        <a href="#" onclick="showSection('ticket-booking')">Ticket Booking</a>
+                        <a href="#" onclick="showSection('check-in')">Passenger Check-In</a>
+                    </div>
+                </li>
+
                 <li><a href="sign-in.html">Sign In</a></li>
             </ul>
         </nav>
@@ -34,27 +40,37 @@
             <div class="dashboard-cards">
                 <div class="card" onclick="showSection('tracking')">
                     <img src="images/bustracking.jpg" alt="Bus Tracking">
-                    <div class="overlay-text"><h3>Bus Tracking</h3></div>
+                    <div class="overlay-text">
+                        <h3>Bus Tracking</h3>
+                    </div>
                 </div>
                 <div class="card" onclick="showSection('route-management')">
                     <img src="images/route.jpg" alt="Route Management">
-                    <div class="overlay-text"><h3>Route Management</h3>
+                    <div class="overlay-text">
+                        <h3>Route Management</h3>
                     </div>
                 </div>
                 <div class="card" onclick="showSection('schedules')">
                     <img src="images/schedule.png" alt="Schedules">
-                    <div class="overlay-text"><h3>Schedules</h3></div>
+                    <div class="overlay-text">
+                        <h3>Schedules</h3>
+                    </div>
                 </div>
                 <div class="card" onclick="showSection('ticket-booking')">
                     <img src="images/booking.png" alt="Ticket Booking">
-                    <div class="overlay-text"><h3>Ticket Booking</h3></div>
+                    <div class="overlay-text">
+                        <h3>Ticket Booking</h3>
+                    </div>
                 </div>
                 <div class="card" onclick="showSection('check-in')">
                     <img src="images/checkin.png" alt="Passenger Check-In">
-                    <div class="overlay-text"><h3>Passenger Check-In</h3></div>
+                    <div class="overlay-text">
+                        <h3>Passenger Check-In</h3>
+                    </div>
                 </div>
             </div>
         </section>
+
 
         <!-- Bus Tracking Section -->
         <section id="tracking">
